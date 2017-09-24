@@ -3,7 +3,7 @@ class RoomsController < ApplicationController
     
 before_action :set_room, only: [:show, :edit, :update]
 before_action :authenticate_user!, except: [:show]
-before_action :require_same_user, only: [edit, :update]
+before_action :require_same_user, only: [:edit, :update]
     def index
         @rooms = current_user.rooms
     end
@@ -19,9 +19,9 @@ before_action :require_same_user, only: [edit, :update]
             if params[:images]
                 params[:images].each do |i|
                     @room.photos.create(image: i)
+                end
             end
-        end
-        @photos = @room.photos
+            @photos = @room.photos
             redirect_to edit_room_path(@room), notice:"Votre annonce a été ajouté avec succès"
         
         else
@@ -44,13 +44,13 @@ before_action :require_same_user, only: [edit, :update]
             end
         end
         @photos = @room.photos
-            redirect_to edit_room_path(@room), notice:"Modification enregistrée..."
+        redirect_to edit_room_path(@room), notice:"Modification enregistrée..."
         else
             render :edit
         end
     end
     
-private
+ private
     def set_room
         @room = Room.find(params[:id])
     end
@@ -66,4 +66,5 @@ private
             flash[:danger] = "Vous n'avez pas le droit de modifier cette page"
             redirect_to root_path
         end
+    end
 end
