@@ -12,9 +12,11 @@ before_action :authenticate_user!, except: [:show]
     end
     
     def create
-    @room = current_user.rooms.build(room_params)
+        @room = current_user.rooms.build(room_params)
+        
         if @room.save
             redirect_to @room, notice:"Votre annonce a été ajouté avec succès"
+        
         else
             render :new
         end
