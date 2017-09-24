@@ -1,8 +1,8 @@
 Rails.application.configure do
   
   Paperclip::Attachement.default_options.merge!({
-    :storage=>:cloudinary,
-    :path=>':id/:style/:filename'
+    :storage => :cloudinary,
+    :path => ':id/:style/:filename'
   })
   # Settings specified here will take precedence over those in config/application.rb.
 
