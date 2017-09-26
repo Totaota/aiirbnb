@@ -1,11 +1,14 @@
-production:
-
-cloud_name: "ho7escn2g"
-
-api_key: <%= ENV["CLOUDINARY_API_KEY"] %>
-
-api_secret: <%= ENV["CLOUDINARY_API_KEY"] %>
-
-enhance_image_tag:true
-
-static_image_support:true
+    production:
+      cloud_name: "ho7escn2g"
+     
+      
+      api_key: <%= ENV["CLOUDINARY_API_KEY"] %>
+     
+      
+      api_secret: <%= ENV["CLOUDINARY_API_SECRET"] %>
+     
+      
+      enhance_image_tag: true
+     
+      
+      static_image_support: true     
