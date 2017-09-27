@@ -56,6 +56,7 @@
 
                 <div class="col-md-4">
                     <!-- Formulaire de réservation -->
+                    <%= render 'reservations/form' %>
                     </div>
                 </div>
                 <!-- Description -->
@@ -93,7 +94,7 @@
                     </div>
                 </div>
                 
-    <!-- Carousel -->
+                <!-- Carousel -->
             <div class="row">
                 <div class="col-md-10 col-md-offset-1">
                     <div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -132,7 +133,7 @@
         
         <br>
         
-    <!-- Google maps -->
+                <!-- Google maps -->
             <div class="row">
                 <div class="col-md-12">
                     <div id="map"></div>
@@ -164,8 +165,7 @@
                 </div>
             </div>
             
-    <!-- Logement à proximité -->
-    
+                <!-- Logement à proximité -->
             <h3>A proximité...</h3>
             <div class="row">
                 <% for room in @room.nearbys(2).limit(3) %>
