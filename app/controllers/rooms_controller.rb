@@ -41,8 +41,8 @@ before_action :require_same_user, only: [:edit, :update]
             if params[:images]
                 params[:images].each do |i|
                     @room.photos.create(image: i)
+                end
             end
-        end
         @photos = @room.photos
         redirect_to edit_room_path(@room), notice:"Modification enregistrée..."
         else
@@ -58,7 +58,7 @@ before_action :require_same_user, only: [:edit, :update]
     def room_params
        params.require(:room).permit(:home_type, :room_type, :accomodate, :bed_room, :bath_room,
        :listing_name, :summary, :address, :is_wifi, :is_tv, :is_closet, :is_shampoo, 
-       :is_breakfast, :is_heating, :is_air, :is_kitchen, :price, :active) 
+       :is_breakfast, :is_heating, :is_air, :is_kitchen, :price, :active)
     end
     
     def require_same_user
