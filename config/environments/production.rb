@@ -5,8 +5,9 @@ Rails.application.configure do
      :storage => :cloudinary,
      
      :path => ':id/:style/:filename'
-     s
+     
      })
+ 
   # Settings specified here will take precedence over those in config/application.rb.
 
   # Code is not reloaded between requests.
