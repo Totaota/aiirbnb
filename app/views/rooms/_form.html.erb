@@ -12,9 +12,9 @@
                 <div class="col-md-4 select">
                     <div class="form-group">
                         <label>Genre d'habitation</label>
-                        <%= f.select :home_type, [["Maison","Maison"],["Appartement", "Appartement"],
-                        id: "home_type", prompt: "A sélectionner...",
-                        class:"form-control"] %>
+                        <%= f.select :home_type, [["Maison","Maison"],["Appartement", "Appartement"]],
+                         prompt: "A sélectionner...",
+                        class:"form-control" %>
                     </div>
                 </div>
                 <div class="col-md-4 select">
@@ -48,8 +48,8 @@
                 <div class="col-md-4 select">
                     <div class="form-group">
                         <label>Salles de bain </label>
-                        <%= f.select :bath_room, [["1",1],["2",2], 
-                        ["3",3], ["4",4]], prompt: "A sélectionner...",
+                        <%= f.select :bath_room, [["1", 1],["2", 2], 
+                        ["3", 3], ["4", 4]], prompt: "A sélectionner...",
                         class:"form-control" %>
                     </div>
                 </div>

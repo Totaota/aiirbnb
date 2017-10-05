@@ -37,7 +37,7 @@
                                 <i class="fa fa-bath fa-2x"></i>
                             </div>
                         </div>
-                        </div>
+                        
                         <div class="row text-center">
                             <div class="col-sm-3">
                                 <%= @room.home_type %>
@@ -52,13 +52,15 @@
                                 <%= @room.bath_room %> <%= @room.bath_room > 1 ? "Salles de bain" : "Salle de bain" %>
                             </div>
                         </div>
+                        </div>
                     </div>
                 </div>
 
-                <div class="col-md-4">
+                <di 
+                v class="col-md-4">
                     <!-- Formulaire de réservation -->
                     <%= render 'reservations/form' %>
-                    </div>
+                </div>
                 
                 <!-- Description -->
                 <div class="row">
