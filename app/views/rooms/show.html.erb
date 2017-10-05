@@ -56,9 +56,10 @@
                     </div>
                 </div>
 
-                <di 
-                v class="col-md-4">
-                    <!-- Formulaire de réservation -->
+                </div>
+                
+                <!-- Formulaire de réservation -->
+                <div class="col-md-4">
                     <%= render 'reservations/form' %>
                 </div>
                 
@@ -98,7 +99,7 @@
                 </div>
                 
                 <!-- Carousel -->
-            <div class="row">
+                <div class="row">
                 <div class="col-md-10 col-md-offset-1">
                     <div id="myCarousel" class="carousel slide" data-ride="carousel">
                       <!-- Indicators -->
@@ -133,11 +134,29 @@
                     </div>
                 </div>
             </div>
+            
+            <br>
+            <hr>
+            
+            <!-- Reviews -->
+            <div class="row">
+                <div class="col-md-12">
+                    <h3>Commentaires <%= @room.average_rating %> (<%= @reviews.count %>)</h3>
+                    <div class="container">
+                        <div>
+                            <%= render 'reviews/form' if @booked && !@hasReview %>
+                        </div>
+                        <div>
+                            <%= render 'reviews/list' %>
+                        </div>
+                    </div>
+                </div>
+            </div>
         
         <br>
         
                 <!-- Google maps -->
-            <div class="row">
+                <div class="row">
                 <div class="col-md-12">
                     <div id="map"></div>
                     
@@ -169,22 +188,22 @@
             </div>
             
                 <!-- Logement à proximité -->
-            <h3>A proximité...</h3>
-            <div class="row">
-                <% for room in @room.nearbys(2).limit(3) %>
-                <div class="col-md-4">
-                    <div class="panel panel-default">
-                        <div class="panel-heading preview">
-                            <%= image_tag room.photos[0].image.url(:medium) if room.photos.length > 0 %>
-                        </div>
-                        <div class="panel-body">
-                            <%= link_to room.listing_name, room %></br>
-                            (à <%= (room.distance*1.6).round(2) %>Km)
+                <h3>A proximité...</h3>
+                <div class="row">
+                    <% for room in @room.nearbys(2).limit(3) %>
+                    <div class="col-md-4">
+                        <div class="panel panel-default">
+                            <div class="panel-heading preview">
+                                <%= image_tag room.photos[0].image.url(:medium) if room.photos.length > 0 %>
+                            </div>
+                            <div class="panel-body">
+                                <%= link_to room.listing_name, room %></br>
+                                (à <%= (room.distance*1.6).round(2) %>Km)
+                            </div>
                         </div>
                     </div>
+                    <% end %>
                 </div>
-                <% end %>
-            </div>
 
             </div>
     </div>
