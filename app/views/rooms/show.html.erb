@@ -190,7 +190,7 @@
                 <!-- Logement à proximité -->
                 <h3>A proximité...</h3>
                 <div class="row">
-                    <% for room in @room.nearbys(2).limit(3) %>
+                    <% for room in @room.nearbys(0).limit(3) %>
                     <div class="col-md-4">
                         <div class="panel panel-default">
                             <div class="panel-heading preview">
