@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :confirmable
          
-  validates :fullname, presence:true, length: {maximum: 50}
+  validates :fullname, presence:true, length: {maximum: 65}
   
   
   has_attached_file :avatar, styles: { medium: "300x300>", thumb: "100x100>" }
