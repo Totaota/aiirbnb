@@ -52,17 +52,9 @@
                                 <%= @room.bath_room %> <%= @room.bath_room > 1 ? "Salles de bain" : "Salle de bain" %>
                             </div>
                         </div>
-                        </div>
                     </div>
                 </div>
 
-                </div>
-                
-                <!-- Formulaire de réservation -->
-                <div class="col-md-4">
-                    <%= render 'reservations/form' %>
-                </div>
-                
                 <!-- Description -->
                 <div class="row">
                     <div class="col-md-12">
@@ -70,6 +62,8 @@
                         <p><%= @room.summary %></p>
                     </div>
                 </div>
+                
+                <br>
                 
                 <!-- Equipement -->
                 <div class="row">
@@ -97,6 +91,15 @@
                         </div>
                     </div>
                 </div>
+                
+                </div>
+                <!-- Formulaire de réservation -->
+                <div class="col-md-4">
+                    <%= render 'reservations/form' %>
+                </div>
+                
+                <br>
+                <hr>
                 
                 <!-- Carousel -->
                 <div class="row">
