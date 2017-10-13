@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171013085509) do
+ActiveRecord::Schema.define(version: 20171013223709) do
 
   create_table "conversations", force: :cascade do |t|
     t.integer  "sender_id"
@@ -29,6 +29,15 @@ ActiveRecord::Schema.define(version: 20171013085509) do
   end
 
   add_index "messages", ["conversation_id"], name: "index_messages_on_conversation_id"
+
+  create_table "payements", force: :cascade do |t|
+    t.string   "email"
+    t.string   "token"
+    t.integer  "reservation_id"
+    t.integer  "amount"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
 
   create_table "photos", force: :cascade do |t|
     t.integer  "room_id"
