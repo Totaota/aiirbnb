@@ -34,6 +34,8 @@ gem 'jquery-ui-rails'
 
 gem 'ransack'
 
+
+
 gem 'rails-timeago'
 
 gem 'omniauth'

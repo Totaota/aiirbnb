@@ -31,7 +31,7 @@ class ReservationsController < ApplicationController
                amount: @reservation.total
            })
            
-            begin
+        begin
             @payment.process_payment
             
         if @payment.save
@@ -45,7 +45,6 @@ class ReservationsController < ApplicationController
             
         redirect_to @reservation.room, notice: "Votre paiement a été rejeté"
         end
-        
         else
             redirect_to @reservation.room, notice: "Votre réservation a échoué"
             
