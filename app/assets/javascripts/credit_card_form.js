@@ -59,7 +59,7 @@ $(".cc_form").on('submit', submitHandler); //2 cc form, on va récupérer les in
  
               $("[data-stripe=number]").remove();
  
-              $("[data-stripe=cvv]").remove();
+              $("[data-stripe=cvc]").remove();
  
               $("[data-stripe=exp-year]").remove();
  
