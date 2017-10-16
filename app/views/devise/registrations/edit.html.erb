@@ -56,7 +56,7 @@
         <%= f.submit "Enregistrer", class: "btn btn-primary" %>
       </div>
     <% end %>
-
+    <br>
       <% unless current_user.confirmed_at? %>
       <br><br>
       <%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: {
